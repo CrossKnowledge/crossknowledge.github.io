@@ -26,3 +26,18 @@
     sharing();
 </script>
 {% endif %}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+<script>
+$(".diagram").sequenceDiagram({theme: 'simple'});
+
+// This is a simple hack to resize the diagram to 100%
+$(".diagram").each(function(i, e) {
+	var svg = $(e).find('svg')[0];
+	svg.setAttribute('viewBox', '0 0 ' + svg.getAttribute('width') + ' ' +  svg.getAttribute('height'));
+	svg.setAttribute('width', '100%');
+	svg.setAttribute('height', null);
+});
+</script>
