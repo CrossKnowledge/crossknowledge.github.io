@@ -13,7 +13,7 @@ The first thing to know is what a SSO is, and what is the purpose.
 
 SSO is the name of an authentication process. An SSO (Single Sign-On) allows a person to connect to multiple applications without entering his password each time. One access control is enough. The opposite process is SLO (Single LogOut).
 
-![SSO example]({{ site.url }}/images/posts/20161111_saml2/ssoBascis.png)
+![SSO example]({{ site.url }}/images/posts/20161111_saml2/ssoBasics.png)
 
 Benefits are:
 - One password to remember.
