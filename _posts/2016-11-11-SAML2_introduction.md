@@ -6,8 +6,6 @@ tags: [saml, saml2, authentication, sso]
 categories: [authentication, saml2]
 ---
 
-# Firsts steps in SAML 2.0
-
 Most of you have heard about SSO and maybe SAML. But it's always an obscure part of authentication system in people's minds. Here is some basic explanation about SAML, I will not enter in details about security and all the data sent from a platform to another. The aim is not to be too much technical to understand the connection process.
 The first thing to know is what a SSO is, and what is the purpose.
 
@@ -18,14 +16,14 @@ SSO is the name of an authentication process. An SSO (Single Sign-On) allows a p
 ![SSO example]({{ site.url }}/images/posts/20161111_saml2/ssoBascis.png)
 
 Benefits are:
-* One password to remember.
-* Less prompts, so less time spent typing his password.
-* Help desk costs lowered.
+- One password to remember.
+- Less prompts, so less time spent typing his password.
+- Help desk costs lowered.
 
 Problems are:
-* Security must be enforced.
-* If the authentication server is down, all these applications are not accessible anymore.
-* Need a good identity data governance.
+- Security must be enforced.
+- If the authentication server is down, all these applications are not accessible anymore.
+- Need a good identity data governance.
 
 Here is an example of a Facebook SSO in the Spotify login page.
 
@@ -53,7 +51,7 @@ The scenario is: the user wants to connect to his eLearning platform through his
 
 __What the user sees__
 
- 1 -The user access his intranet, but he is not connected, he clicks on the "Connect to intranet button".
+1 - The user access his intranet, but he is not connected, he clicks on the "Connect to intranet button".
 
 ![authentication step1]({{ site.url }}/images/posts/20161111_saml2/step1.png)
 
@@ -71,7 +69,7 @@ __What the user sees__
 
 __What really happens__
 
- - _The SSO request_: When the user clicks on the login button of the intranet, the intranet will send an **AuthnRequest** to the company authentication server (IDP). An AuthnRequest is a request sent from the SP to the IDP to ask if the user can connect (image 1).
+- _The SSO request_: When the user clicks on the login button of the intranet, the intranet will send an **AuthnRequest** to the company authentication server (IDP). An AuthnRequest is a request sent from the SP to the IDP to ask if the user can connect (image 1).
 - _The SSO authorization_: The IDP will analyse the AuthnRequest (does he know the intranet, are the certificates correct, etc). If everything is correct, the IDP will check if the user is already logged in (with cookies for example). In our scenario it's the first connection of the user to a company platform so he is not connected for now. Therefor IDP displays a login/password page (image 2). Once the credentials are validated, the employee is connected on the IDP and this one will send a **Response** to the SP. The Response is a message from the IDP to the SP that contains the user data (ex lastname, firstname, employee id, etc) and a status (access granted or not). Once the access is granted he will be redirected to the intranet homepage (image 3).
 - _The SSO in action_: The user clicks on a link in his intranet that redirects him on the company eLearning platform. During the page loading, the eLearning platform will send to the IDP an AuthnRequest. The IDP then replies with a Response that grants access to the eLearning platform. The employee is now connected on the eLearning platform with his account (image 3). He will never see the eLearning platform login page because he is already connected on the IDP.
 
